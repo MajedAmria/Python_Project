@@ -1,0 +1,101 @@
+.main{
+    width: 50%;
+    height: 50%;
+    margin: 10% auto;
+   
+   
+}
+#floatingInput{
+    width: 40%;
+}
+#floatingPassword{
+    width: 40%;
+  
+}
+.page1 {
+    background-image: url("1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+.log{
+    color: ghostwhite;
+}
+.page2{
+    background-image: url("1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.select{
+    display: flex;
+    justify-content: space-evenly;
+}
+main{
+
+    width: 80%;
+    height: 50%;
+    margin: 5% auto;  
+}
+button{
+    color: white;
+}
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    color: white;
+    text-align: center;
+}
+.fa-facebook {
+    border-radius: 100%;
+    background: #3B5998;
+    color: white;
+  }
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+ #color{
+      font-size: large;
+      color: white;
+  }
+  #nav-home-tab{
+      background-color: gray;
+    font-size: large;
+    color: white;
+  }
+.page3{
+    background-image: url("4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.page4{
+    background-image: url("1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.view{
+    color: white;
+    margin: 10% auto;
+  
+}
+.page5{
+    background-image: url("1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;  
+}

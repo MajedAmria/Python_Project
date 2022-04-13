@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
-# Create your views here.
+def login(request):
+    return render(request,"login.html")
+
+def regestration(request):
+    return render(request,"regestration.html")
+
+def reg():
+    return redirect('/reg')
