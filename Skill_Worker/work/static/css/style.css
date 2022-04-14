@@ -22,8 +22,10 @@
 .log{
     color: ghostwhite;
 }
+ 
 .page2{
-    background-image: url("1.png");
+   
+    background-image: url("3.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
