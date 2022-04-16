@@ -1,5 +1,7 @@
 from django.db import models
 from birthday import BirthdayField, BirthdayManager
+
+
 class Worker(models.Model):
     first_name=models.CharField(max_length=45)
     last_name=models.CharField(max_length=45)
