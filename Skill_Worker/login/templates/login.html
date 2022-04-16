@@ -16,6 +16,8 @@
      
        
         <h1 class="log">تسجيل الدخول</h1>
+        <form action="/enter" method="post">
+          {% csrf_token %}
         <br><div class="form-floating mb-3">
             
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
@@ -30,12 +32,12 @@
            
      
           <br>
-          <form action="/reg" method="post">
-            {% csrf_token %}
-          <button type="button" class="btn btn-dark">تسجيل الدخول</button>
-          
-          <button type="submit" class="btn btn-dark"> انشاء حساب</button>
+         
+          <button type="submit" class="btn btn-dark">تسجيل الدخول</button>
           </form>
+          
+          <button type="submit" action="/reg" class="btn btn-dark"> انشاء حساب</button>
+          
    </main>
 </body>
 </html>

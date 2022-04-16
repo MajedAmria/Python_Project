@@ -17,11 +17,14 @@
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" >الرئيسية</button>
           <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" >تحديث البيانات الشخصية</button>
-          <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact">تسجيل الخروج</button>
+          <form action="/logout" method="post">
+            {% csrf_token %}
+          <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="submit" role="tab" aria-controls="nav-contact">تسجيل الخروج</button>
+          </form>
         </div>
       </nav>
       <br>
-      <h1>اهلا بك،محمود</h1>
+      <h1>اهلا بك،{{worker.first_name}}</h1>
     <main class="view">
         <h1>التقييم</h1>
         <br>

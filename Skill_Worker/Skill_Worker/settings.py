@@ -31,10 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'work',
-    'login',
     'django.contrib.admin',
     'django.contrib.auth',
+    'work',
+    'login',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

@@ -13,7 +13,6 @@
     
   </head>
 <body class="page2">
-
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" >الرئيسية</button>
@@ -68,11 +67,13 @@
           </tr>
           <tbody>
             <tr>
-              <td scope="row" id="color">محمود العطشان</td>
-              <td id="color">رام الله والبيرة  </td>
-              <td id="color">رام الله</td>
-              <td id="color">بيرزيت</td>
+              {% for worker in this_worker %}
+              <td scope="row" id="color">{{worker.first_name}} {{worker.last_name}}</td>
+              <td id="color">{{worker.skills.governorate.governorate}} </td>
+              <td id="color">{{worker.skills.city.city}}</td>
+              <td id="color">{{worker.skills.community.community}}</td>
               <td id="color"><a href="#">عرض </a>|<a href="/rateworke">تقييم الحرفي </a></td>
+              {% endfor %}
             </tr>
           </tbody>
       </table>

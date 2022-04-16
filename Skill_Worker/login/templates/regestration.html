@@ -13,42 +13,51 @@
 <body>
     
     <a href="/dashbord">الصفحة الرئيسية</a>
-    <form action="addskill" method="post">
+    
     <main class="main">
 
-
+      
         <h2 class="log">انشاء ملف مهني/ حرفي</h2>
-        
+        <form action="/addskill" method="post">
+          {% csrf_token %}
         <br> <div class="form-floating">
-            <input type="text" class="form-control" id="floatingPassword" placeholder="الاسم الأول" required>
+            <input type="text" class="form-control" id="floatingPassword" name="first_name" placeholder="الاسم الأول" required>
             <label for="floatingPassword">الاسم الأول</label>
           </div>
           
           <br><div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="العائلة" required>
+            <input type="text" class="form-control" id="floatingInput" name="last_name" placeholder="العائلة" required>
             <label for="floatingInput">العائلة</label>
           </div>
           <br><div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="hana@gmail.com" required>
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="hana@gmail.com" required>
             <label for="floatingInput">البريد الإلكتروني</label>
           </div>
           <br><div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingInput" placeholder="password" required>
+            <input type="password" class="form-control" id="floatingInput" name="password" placeholder="password" required>
             <label for="floatingInput">كلمة المرور</label>
           </div>
           <br><div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingInput" placeholder="password" required>
+            <input type="password" class="form-control" id="floatingInput" name="confirm" placeholder="password" required>
             <label for="floatingInput">تأكيد كلمة المرور </label>
           </div>
           <br><div class="form-floating mb-3">
-            <input type="date" class="form-control" id="floatingInput" placeholder="13/04/2022" required>
+            <input type="date" class="form-control" id="floatingInput" name="birthdate" placeholder="13/04/2022" required>
             <label for="floatingInput">تاريخ الميلاد </label>
           </div>
                  
           <br>
-          <button type="button" class="btn btn-dark">انشاء</button>
-         
+          
+          <button type="submit" class="btn btn-dark">انشاء</button>
+        </form>
     </main>
-    </form>
+  
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+ {% endif %}
 </body>
 </html>

@@ -13,7 +13,7 @@
   
 }
 .page1 {
-    background-image: url("1.png");
+    background-image: url('../img/1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,10 +25,10 @@
  
 .page2{
    
-    background-image: url("3.jpg");
+    background-image: url('../img/1.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 100%;
 }
 .select{
@@ -76,14 +76,14 @@ footer{
     color: white;
   }
 .page3{
-    background-image: url("4.png");
+    background-image: url('../img/4.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
 }
 .page4{
-    background-image: url("1.png");
+    background-image: url('../img/1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,7 +95,7 @@ footer{
   
 }
 .page5{
-    background-image: url("1.png");
+    background-image: url('../img/1.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
