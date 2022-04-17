@@ -66,9 +66,9 @@ class Community(models.Model):
 
 class Skill(models.Model):
     address=models.CharField(max_length=100)
-    phone=models.CharField(max_length=10)
-    mobile1=models.CharField(max_length=10)
-    mobile2=models.CharField(max_length=10)
+    phone=models.IntegerField(default=0)
+    mobile1=models.IntegerField(default=0)
+    mobile2=models.IntegerField(default=0)
     nickname=models.CharField(max_length=45)
     facebook=models.CharField(max_length=45)
     whatsapp=models.CharField(max_length=45) 
@@ -140,10 +140,10 @@ def create_evaluation(info):
 def create_skill(info):
     user=info['worker']
     user_id=Worker.objects.get(id=user)
-    category_id=Skill_cat.objects.get(id=info['id'])
-    community_id=Community.objects.get(id=info['id'])
-    city_id=City.objects.get(id=info['id'])
-    edu_id=Education.objects.get(id=info['id'])
+    category_id=Skill_cat.objects.get(id=info.id)
+    community_id=Community.objects.get(id=info)
+    city_id=City.objects.get(id=info)
+    edu_id=Education.objects.get(id=info)
     Skill.objects.create(address=info['address'],phone=info['phone'],mobile1=info['mobile1'],
     mobile2=info['mobile2'],nickname=info['nickname'],facebook=info['facebook'],
     whatsapp=info['whatsapp'],worker=user_id,category=category_id,community=community_id,city=city_id,education=edu_id)

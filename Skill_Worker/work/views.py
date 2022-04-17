@@ -42,11 +42,12 @@ def add_to_skill(request):
         if len(errors) > 0:
                     for key, value in errors.items():
                         messages.error(request, value)
-                    return redirect('/login')
-        else:            
-            create_skill(request.POST)
+                    return redirect('/add')
+        else:    
+           print("**********",request.POST)        
+           models.create_skill(request.POST)
 
-            return redirect('/add')
+           return redirect('/enter')
 
 def update_skill(request):
     governorate=models.all_governorate()
