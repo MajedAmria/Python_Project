@@ -18,8 +18,9 @@
 
       
         <h2 class="log">انشاء ملف مهني/ حرفي</h2>
-        <form action="/addskill" method="post">
+        <form action="/loginworker" method="post">
           {% csrf_token %}
+          <input type="hidden" name="which_form" value="register" >
         <br> <div class="form-floating">
             <input type="text" class="form-control" id="floatingPassword" name="first_name" placeholder="الاسم الأول" required>
             <label for="floatingPassword">الاسم الأول</label>

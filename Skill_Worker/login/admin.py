@@ -1,6 +1,6 @@
 from django.contrib import admin
 from login.models import Worker
-from work.models import City,Community,Skill_cat,Education,Evaluation,Governorate
+from work.models import City,Community,Skill_cat,Education,Evaluation,Governorate,Skill
 
 @admin.register(Worker)
 class WorkerAdmin(admin.ModelAdmin):
@@ -26,6 +26,6 @@ class Skill_catAdmin(admin.ModelAdmin):
 class EducationAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(Evaluation)
-class EvaluationAdmin(admin.ModelAdmin):
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
     pass

@@ -8,15 +8,25 @@
     <title>view</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <img src="{% static 'images/image.jpg' %}" />
+    <!-- <img src="{% static 'images/image.jpg' %}" /> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
 
 </head>
 <body class="page4">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" >الرئيسية</button>
-          <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" >تحديث البيانات الشخصية</button>
+          <form action="/" method="post">
+            {% csrf_token %}
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="submit" role="tab" aria-controls="nav-home" >الرئيسية</button>
+          </form>
+          <form action="/add" method="post">
+            {% csrf_token %}
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="submit" role="tab" aria-controls="nav-home" >اضافة بيانات</button>
+          </form>
+          <form action="/update" method="post">
+            {% csrf_token %}
+          <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="submit" role="tab" aria-controls="nav-profile" >تحديث البيانات الشخصية</button>
+          </form>
           <form action="/logout" method="post">
             {% csrf_token %}
           <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="submit" role="tab" aria-controls="nav-contact">تسجيل الخروج</button>
@@ -24,7 +34,7 @@
         </div>
       </nav>
       <br>
-      <h1>اهلا بك،{{worker.first_name}}</h1>
+      <h1>اهلا بك،{{logged_user}}</h1>
     <main class="view">
         <h1>التقييم</h1>
         <br>

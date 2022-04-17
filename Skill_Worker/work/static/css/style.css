@@ -101,3 +101,17 @@ footer{
     background-size: cover;
     height: 100%;  
 }
+.page6{
+    background-image: url('../img/1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;  
+}
+.page7{
+    background-image: url('../img/1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}

@@ -7,17 +7,26 @@
     <title>view</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <img src="{% static 'images/image.jpg' %}" />
+    <!-- <img src="{% static 'images/image.jpg' %}" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
+
 </head>
 <body class="page3">
-    <a href="#">العودة الى الصفحة الرئيسية</a>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <form action="/dashbord" method="post">
+            {% csrf_token %}
+          <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="submit" role="tab" aria-controls="nav-contact"> العودة الى الصفحة الرئيسية</button>
+          </form>
+        </div>
+      </nav>
     <main class="view">
- <p>الاسم</p>
+ <p>الاسم{{this_worker.first_name}}</p>
  <p>العمر</p>
- <p>رقم الهاتف</p>
- <p> البريد الالكتروني</p>
- <p>فيس بوك</p>
- <p>الواتس اب</p>
+ <p>رقم الهاتف{{this_worker.mobile1}}</p>
+ <p> البريد الالكتروني{{this_worker.email}}</p>
+ <p>فيس بوك {{this_worker.facebook}}</p>
+ <p>الواتس اب{{this_worker.whatsapp}}</p>
  
 </main>
 </body>

@@ -30,27 +30,27 @@
      <div class="select">
         <select class="form-select" aria-label="Default select example">
             <option selected>الصنعة</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {% for category in this_category %}
+            <option value="1">{{category.categoty}}</option>
+           {% endfor %}
           </select>
           <select class="form-select" aria-label="Default select example">
             <option selected>المحافظة</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {% for gov in this_governorate %}
+            <option value="1">{{gov.governorate}}</option>
+            {% endfor %}
           </select>
           <select class="form-select" aria-label="Default select example">
             <option selected>المدينة</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {% for city in this_city %}
+            <option value="1">{{city.city}}</option>
+           {% endfor %}
           </select>
           <select class="form-select" aria-label="Default select example">
             <option selected>القرية</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {% for comm in this_comminty%}
+            <option value="1">{{comm.community}}</option>
+            {% endfor  %}
           </select>
           
 
@@ -66,15 +66,20 @@
             <th scope="col" id="color">البيانات</th>
           </tr>
           <tbody>
+            {% for worker in all_workers %}
             <tr>
-              {% for worker in this_worker %}
               <td scope="row" id="color">{{worker.first_name}} {{worker.last_name}}</td>
-              <td id="color">{{worker.skills.governorate.governorate}} </td>
-              <td id="color">{{worker.skills.city.city}}</td>
-              <td id="color">{{worker.skills.community.community}}</td>
-              <td id="color"><a href="#">عرض </a>|<a href="/rateworke">تقييم الحرفي </a></td>
-              {% endfor %}
+              {% for skill in worker.skills.all %}
+                <td id="color">{{skill.city.governorate}} </td>
+              
+                <td id="color">{{skill.city}}</td>
+            
+                <td id="color">{{skill.community}}</td>
+              
+              <td id="color"><a href="/show/{{worker.id}}">عرض </a>|<a href="/rateworke">تقييم الحرفي </a></td>
+              {%endfor%}
             </tr>
+            {% endfor %}
           </tbody>
       </table>
     </main>
