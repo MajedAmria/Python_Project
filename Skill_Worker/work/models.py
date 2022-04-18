@@ -1,4 +1,4 @@
-from tkinter import CASCADE
+
 import bcrypt
 
 from django.db import models
@@ -50,7 +50,7 @@ class Governorate(models.Model):
 
 class City(models.Model):
     city=models.CharField(max_length=45)
-    governorate=models.ForeignKey(Governorate,related_name="cities",on_delete=CASCADE)
+    governorate=models.ForeignKey(Governorate,related_name="cities",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
@@ -58,7 +58,7 @@ class City(models.Model):
 
 class Community(models.Model):
     community=models.CharField(max_length=45)
-    governorate=models.ForeignKey(Governorate,related_name="communities",on_delete=CASCADE)
+    governorate=models.ForeignKey(Governorate,related_name="communities",on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
