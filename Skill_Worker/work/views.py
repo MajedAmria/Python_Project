@@ -44,8 +44,7 @@ def add_to_skill(request):
                     for key, value in errors.items():
                         messages.error(request, value)
                     return redirect('/add')
-        else:    
-           print("**********",request.POST)        
+        else:           
            models.create_skill(request.POST)
 
            return redirect('/enter')
@@ -66,7 +65,7 @@ def update_skill(request):
     }
     return render(request,"Updateskillprof.html",context)
 
-def update(request,id):
+def update(request):
     if request.method == 'POST':
         errors = Skill.objects.update_validator(request.POST)
         if len(errors) > 0:
@@ -79,8 +78,10 @@ def update(request,id):
     return redirect('/enter')
 
 def show_worker(request,worker_id):
+    skill=models.get_skill(worker_id)
     worker=models.get_worker(worker_id)
     context={
+        'skills':skill,
         'this_worker':worker,
     }
         

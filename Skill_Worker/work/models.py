@@ -94,7 +94,10 @@ class Evaluation(models.Model):
         return f"{self.evaluation_comment,self.evaluation_range}"
 
 def get_worker(info):
-    return Worker.objects.get(id=info) 
+    return Worker.objects.get(id=info)
+
+def get_skill(info):
+    return Skill.objects.get(id=info)
 
 def all_worker():
     return Worker.objects.all()
@@ -144,12 +147,6 @@ def create_skill(info):
     mobile2= info['mobile2']
     address = info['address']
     facebook = info['facebook']
-    # print("**************",info['education'])
-    print("**************",info['city'])
-    # print("**************",info['category1'])
-    # print("**************",info['village'])
-
-    
     category_id=Skill_cat.objects.get(id=info['category1'])
     community_id=Community.objects.get(id=info['village'])
     city_id=City.objects.get(id=info['city'])
@@ -167,4 +164,4 @@ def update(info):
     x.mobile2=info['mobile2']
     x.address=info['address']
     x.save()
-    return x
+

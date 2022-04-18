@@ -9,7 +9,7 @@ urlpatterns = [
     path('show/<int:worker_id>',views.show_worker),
     path('add',views.add_skill),
     path('addto',views.add_to_skill),
-    path('updateskill/<int:id>',views.update),
+    path('updateskill',views.update),
     path('logout',views.loguot),
   
 ]
