@@ -26,11 +26,9 @@
     <form action="/addto" method="post">
       {% csrf_token %}
     <main >
-
-
         <h2 class="log">اضافة مهنة/ حرفة</h2>
         <h3> الملف الشخصي، {{user_name}}</h3>
-      <input type="hidden" name="worker" , value="{{user_name}}">
+      <input type="hidden" name="worker" , value="{{user_id}}">
         <br><div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" name="mobile1" placeholder="059-9955667">
             <label for="floatingInput">رقم الهاتف المحمول</label>
@@ -51,10 +49,10 @@
             <label for="floatingInput">فيسبوك</label>
           </div> <br>
           <div class="form-floating mb-3"></div>
-          <select class="form-select form-select-lg mb-3" id="floatingInput" aria-label=".form-select-lg example">
+          <select class="form-select form-select-lg mb-3" name="district" id="floatingInput" aria-label=".form-select-lg example">
             <option selected>المحافظة</option>
             {% for gov in this_governorate%}
-            <option value="1">{{gov.governorate}}</option>
+            <option value="{{gov.id}}">{{gov.governorate}}</option>
           {% endfor %}
             
           </select>
@@ -63,33 +61,33 @@
           <select class="form-select form-select-lg mb-3" id="floatingInput" name="city" aria-label=".form-select-lg example">
             <option selected>المدينة</option>
             {% for city in this_city%}
-            <option value="1">{{city.city}}</option>
+            <option value="{{city.id}}">{{city.city}}</option>
           {% endfor %}
             
           </select>
           
           <div class="form-floating mb-3"></div>
-          <select class="form-select form-select-lg mb-3" id="floatingInput" aria-label=".form-select-lg example">
+          <select class="form-select form-select-lg mb-3" name="village" id="floatingInput" aria-label=".form-select-lg example">
             <option selected>القرية</option>
             {% for comm in this_comminty%}
-            <option value="1">{{comm.community}}</option>
+            <option value="{{comm.id}}">{{comm.community}}</option>
           {% endfor %}
             
           </select>
           <div class="form-floating mb-3"></div>
-          <select class="form-select form-select-lg mb-3" id="floatingInput" aria-label=".form-select-lg example">
+          <select class="form-select form-select-lg mb-3" name="education" id="floatingInput" aria-label=".form-select-lg example">
             <option selected>المستوى التعليمي</option>
             {% for edu in this_edu%}
-            <option value="1">{{edu.level}}</option>
+            <option value="{{edu.id}}">{{edu.level}}</option>
           {% endfor %}
             
           </select>
     </div>
           <div class="form-floating mb-3"></div>
-              <select class="form-select form-select-lg mb-3" id="floatingInput" aria-label=".form-select-lg example">
+              <select class="form-select form-select-lg mb-3" name="category1" id="floatingInput" aria-label=".form-select-lg example">
                 <option selected>اختار مهنتك</option>
                 {% for cat in this_category%}
-                <option value="1">{{cat.categoty}}</option>
+                <option value="{{cat.id}}">{{cat.categoty}}</option>
               {% endfor %}
               </select>
         </div>

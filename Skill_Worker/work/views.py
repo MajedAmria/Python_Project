@@ -33,6 +33,7 @@ def add_skill(request):
         'this_category':cat,
         'this_edu': edu,
         'user_name':  request.session['user_name'],
+        'user_id' : request.session['user_id'],
     }
     return render(request,"addskill.html",context)
 
@@ -69,9 +70,9 @@ def update(request,id):
     if request.method == 'POST':
         errors = Skill.objects.update_validator(request.POST)
         if len(errors) > 0:
-                    for key, value in errors.items():
-                        messages.error(request, value)
-                    return redirect('/login')
+                for key, value in errors.items():
+                    messages.error(request, value)
+                return redirect('/login')
         else:
             models.update(request.POST)
             return redirect('/enter')

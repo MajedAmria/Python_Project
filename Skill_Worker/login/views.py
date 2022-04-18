@@ -27,6 +27,8 @@ def login_worker(request):
                     # logged_user = user 
                     if bcrypt.checkpw(request.POST['password'].encode(), user.password.encode()):
                         request.session['user_name'] = user.first_name
+                        request.session['user_id'] = user.id
+                        print(user.id)
                         return redirect('/enter')
                 return redirect('/login')
 

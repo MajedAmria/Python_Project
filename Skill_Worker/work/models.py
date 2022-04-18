@@ -69,7 +69,7 @@ class Skill(models.Model):
     phone=models.IntegerField(default=0)
     mobile1=models.IntegerField(default=0)
     mobile2=models.IntegerField(default=0)
-    nickname=models.CharField(max_length=45)
+    nickname=models.CharField(max_length=45, null = True, blank = True, default = "nickname")
     facebook=models.CharField(max_length=45)
     whatsapp=models.CharField(max_length=45) 
     worker=models.ForeignKey(Worker,related_name="skills",on_delete=models.CASCADE) 
@@ -140,13 +140,22 @@ def create_evaluation(info):
 def create_skill(info):
     user=info['worker']
     user_id=Worker.objects.get(id=user)
-    category_id=Skill_cat.objects.get(id=info.id)
-    community_id=Community.objects.get(id=info)
-    city_id=City.objects.get(id=info)
-    edu_id=Education.objects.get(id=info)
-    Skill.objects.create(address=info['address'],phone=info['phone'],mobile1=info['mobile1'],
-    mobile2=info['mobile2'],nickname=info['nickname'],facebook=info['facebook'],
-    whatsapp=info['whatsapp'],worker=user_id,category=category_id,community=community_id,city=city_id,education=edu_id)
+    mobile1 = info['mobile1']
+    mobile2= info['mobile2']
+    address = info['address']
+    facebook = info['facebook']
+    # print("**************",info['education'])
+    print("**************",info['city'])
+    # print("**************",info['category1'])
+    # print("**************",info['village'])
+
+    
+    category_id=Skill_cat.objects.get(id=info['category1'])
+    community_id=Community.objects.get(id=info['village'])
+    city_id=City.objects.get(id=info['city'])
+    edu_id=Education.objects.get(id=info['education'])
+    Skill.objects.create(address=address,mobile1=mobile1,mobile2=mobile2,facebook=facebook,
+    worker=user_id,categoty=category_id,community=community_id,city=city_id,education=edu_id)
 
 def update(info):
     password = info['password']
